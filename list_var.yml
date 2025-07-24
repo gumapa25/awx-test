@@ -1,6 +1,12 @@
-- name: Ejecutar listado contenido en el FS /var
+---
+- name: Listar contenido de /var
   hosts: all
   become: true
+  gather_facts: no
   tasks:
-    - name: Ejecutar el ls -ltr /var
-      shell: ls -ltr /var
+    - name: Ejecutar ls -la /var
+      ansible.builtin.command: ls -la /var
+      register: resultado_ls
+    - name: Mostrar resultado en pantalla
+      ansible.builtin.debug:
+        var: resultado_ls.stdout_lines
