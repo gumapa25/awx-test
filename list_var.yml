@@ -1,7 +1,6 @@
 ---
 - name: Listar contenido de /var
   hosts: all
-  become: true
   gather_facts: no
   tasks:
     - name: Ejecutar ls -la /var
