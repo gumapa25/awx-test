@@ -1,0 +1,7 @@
+---
+- name: Probar conectividad SSH a servidores remotos
+  hosts: all
+  gather_facts: false # No es necesario recopilar hechos para una simple prueba de ping
+  tasks:
+    - name: Verificar conectividad
+      ping:
