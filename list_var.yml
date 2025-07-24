@@ -1,0 +1,6 @@
+- name: Ejecutar listado contenido en el FS /var
+  hosts: all
+  become: true
+  tasks:
+    - name: Ejecutar el ls -ltr /var
+      shell: ls -ltr /var
